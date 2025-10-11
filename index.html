@@ -7,120 +7,73 @@
     <style>
         body {
             margin: 0;
-            padding: 0;
             font-family: Arial, sans-serif;
             background-color: #1e3a8a;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .container {
+            color: white;
             text-align: center;
-            position: relative;
         }
         nav {
-            position: absolute;
-            top: 20px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
+            padding: 20px;
         }
         nav a {
-            color: #ffffff;
+            color: white;
             margin: 0 15px;
             text-decoration: none;
             font-size: 18px;
         }
-        nav a:hover {
-            color: #ff2d55;
-        }
-        .get-in-touch {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        .get-in-touch button {
-            background-color: #ff2d55;
-            color: #ffffff;
-            border: none;
+        .button {
+            background-color: #e63946;
+            color: white;
             padding: 10px 20px;
+            border: none;
             border-radius: 20px;
             cursor: pointer;
             font-size: 16px;
+            margin: 10px;
         }
-        .get-in-touch button:hover {
-            background-color: #e6003c;
+        .button:hover {
+            background-color: #d62828;
         }
         .content {
-            margin-top: 100px;
+            padding: 50px 20px;
         }
         .content h1 {
             font-size: 48px;
-            margin: 10px 0;
+            margin-bottom: 20px;
         }
         .content p {
             font-size: 18px;
-            margin: 20px 0;
+            max-width: 600px;
+            margin: 0 auto 30px;
         }
-        .content .buttons button {
-            background-color: #ff2d55;
-            color: #ffffff;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 18px;
-            margin: 0 10px;
-        }
-        .content .buttons button:hover {
-            background-color: #e6003c;
-        }
-        .image {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-        }
-        .image img {
+        .image-placeholder {
             width: 300px;
             height: auto;
-        }
-        .digital-agency {
-            font-size: 24px;
-            color: #d1d5db;
-            margin-bottom: 20px;
+            background-color: #f0f0f0;
+            margin: 20px auto;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#services">Services</a>
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#contact">Contact Us</a>
-        </nav>
-        <div class="get-in-touch">
-            <button>Get In Touch</button>
-        </div>
-        <div class="content">
-            <div class="digital-agency">-- Digital Agency</div>
-            <h1>Website Designing And Development Company</h1>
-            <p>We@site Solutions is a premier web designing and development company, which has been providing web enabled service since inception we have grown and excelled in the services we provide.</p>
-            <div class="buttons">
-                <button>Know More</button>
-                <button>Contact Us</button>
-            </div>
-        </div>
-        <div class="image">
-            <img src="https://via.placeholder.com/300x200" alt="Website Design Image">
-        </div>
+    <nav>
+        <h2>Asyma Solutions</h2>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Services</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact Us</a>
+        <button class="button">Get In Touch</button>
+    </nav>
+    <div class="content">
+        <h3>--- Digital Agency</h3>
+        <h1>Website Designing And Development Company</h1>
+        <p>We@site Solutions is a premier web designing and development company, which has been providing web enabled service since inception we have grown and excelled in the services we provide.</p>
+        <button class="button">Know More</button>
+        <button class="button">Contact Us</button>
+        <div class="image-placeholder"></div>
     </div>
     <script>
-        // Add any JavaScript interactivity if needed
+        // Add any JavaScript interactivity here if needed
     </script>
 </body>
 </html>
