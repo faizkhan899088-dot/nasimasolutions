@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nasima Solutions</title>
+    <title>Asyma Solutions</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #1e3a8a;
             color: white;
-            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            color: white;
         }
         nav {
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
             background-color: #1e3a8a;
         }
         nav h2 {
@@ -25,9 +29,7 @@
             font-weight: bold;
         }
         nav a {
-            color: white;
             margin: 0 15px;
-            text-decoration: none;
             font-size: 18px;
         }
         nav a:hover {
@@ -47,55 +49,134 @@
         .button:hover {
             background-color: #d62828;
         }
-        .content {
+
+        /* Hero Section */
+        .hero {
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-wrap: wrap;
             padding: 60px 20px;
         }
-        .text-content {
+        .hero .text-content {
             flex: 1;
+            min-width: 300px;
+            padding: 20px;
             text-align: left;
-            padding-right: 20px;
         }
-        .text-content h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #fca311;
-        }
-        .text-content h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        .text-content p {
-            font-size: 18px;
-            max-width: 700px;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        .image-placeholder {
+        .hero h3 { color: #fca311; font-size: 22px; margin-bottom: 10px; }
+        .hero h1 { font-size: 48px; margin-bottom: 20px; }
+        .hero p { font-size: 18px; margin-bottom: 30px; line-height: 1.6; }
+        .hero .image-placeholder {
             flex: 1;
-            width: 300px;
-            height: 200px;
-            background-color: #f0f0f0;
+            min-width: 300px;
+            height: 300px;
             margin: 20px;
             border-radius: 10px;
             background-image: url('https://nasimasolutions.pages.dev/bnr.png');
             background-size: cover;
+            background-position: center;
         }
+
+        /* About Section */
+        .about {
+            background-color: #14213d;
+            padding: 60px 20px;
+            text-align: left;
+        }
+        .about h2 {
+            color: #fca311;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .about p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+            background-color: #1e3a8a;
+        }
+        .stat-box {
+            flex: 1;
+            min-width: 150px;
+            margin: 10px;
+            text-align: center;
+        }
+        .stat-box h3 { font-size: 28px; color: #fca311; margin-bottom: 5px; }
+        .stat-box p { font-size: 16px; }
+
+        /* Services Section */
+        .services {
+            padding: 60px 20px;
+            background-color: #14213d;
+            text-align: left;
+        }
+        .services h2 { color: #fca311; font-size: 36px; margin-bottom: 40px; text-align: center; }
+        .service-box {
+            background-color: #1e3a8a;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+        }
+        .service-box h3 { font-size: 22px; margin-bottom: 10px; color: #fca311; }
+        .service-box p { font-size: 16px; margin-bottom: 10px; }
+        .service-box a { color: #fca311; font-weight: bold; }
+
+        /* Contact Section */
+        .contact {
+            background-color: #1e3a8a;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .contact h2 { color: #fca311; font-size: 36px; margin-bottom: 20px; }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .contact input, .contact textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+        .contact button { width: 150px; margin: 0 auto; }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #14213d;
+            padding: 60px 20px;
+            text-align: left;
+        }
+        .testimonials h2 { color: #fca311; font-size: 36px; margin-bottom: 40px; text-align: center; }
+        .testimonial-box {
+            background-color: #1e3a8a;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+        .testimonial-box p { font-size: 16px; line-height: 1.5; }
+
+        /* Footer */
         footer {
             background-color: #14213d;
             padding: 30px 20px;
-            margin-top: 50px;
+            text-align: center;
         }
-        footer p {
-            margin: 0;
-            color: #fca311;
-            font-size: 16px;
-        }
+        footer p { margin: 5px 0; color: #fca311; }
     </style>
 </head>
 <body>
+
     <nav>
         <h2>Asyma Solutions</h2>
         <a href="">Home</a>
@@ -106,7 +187,8 @@
         <button class="button">Get In Touch</button>
     </nav>
 
-    <div class="content">
+    <!-- Hero Section -->
+    <div class="hero">
         <div class="text-content">
             <h3>--- Digital Agency</h3>
             <h1>Website Designing And Development Company</h1>
@@ -116,8 +198,106 @@
         </div>
         <div class="image-placeholder"></div>
     </div>
+
+    <!-- About Section -->
+    <div class="about">
+        <h2>ABOUT US</h2>
+        <h3>Web Design Company</h3>
+        <p>Asyma Solutions Website Solutions is a chief web planning organization which has been giving web empowered assistance Since origin. We have developed and dominated in the administrations we give. The purpose behind our development is that we treat every single customer as an individual from Asyma Solutions FAMILY. We are adaptable in client's requests and the explanation we're ready to offer such high incentive for your cash is that there is a pool of profoundly taught, all around prepared IT experts and visual specialists in our Team, who are moved on from chief establishments.</p>
+        <p>The typical cost for basic items is similarly lower than other western nations. We offer more benefit for your cash and you with subjective work. The way in to our degree of value lay in comprehension of 3 key fixings—thoughts, usage and administration. Just when they meet, you will acquire viable web answers for the developing requirements of your business. Nothing is so commendable in the virtual world as thoughts. We consider them to be the primary object of our work. Simply the best and most imaginative thoughts have the rights to be actualized, and that carries us to the subsequent fixing.</p>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats">
+        <div class="stat-box">
+            <h3>+149</h3>
+            <p>Cups Of Tea</p>
+        </div>
+        <div class="stat-box">
+            <h3>+12</h3>
+            <p>Working Hours</p>
+        </div>
+        <div class="stat-box">
+            <h3>+50</h3>
+            <p>Awesome Developers</p>
+        </div>
+        <div class="stat-box">
+            <h3>+99</h3>
+            <p>Winning Awards</p>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services">
+        <h2>OUR DIGITAL SERVICES</h2>
+
+        <div class="service-box">
+            <h3>Website Design And Development</h3>
+            <p>Our fantastic website composition arrangements are likewise one reason why Asyma Solutions has become very famous in worldwide because of there best services about website designing projects.</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="service-box">
+            <h3>Web Hosting and Maintenance</h3>
+            <p>Bursting Fast Web Hosting with Virus Protection and Anti-spam. Top-quality facilitating is less expensive than you might suspect. Get the amazing facilitating that simple to coordinate and versatile, dependable, quick and simple to utilize arrangements.</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="service-box">
+            <h3>E-commerce Web Designing</h3>
+            <p>Most ideal approach to Sell your item on the web. We make online web based business applications for any sort of organizations with productive buying climate for purchasers and merchants.</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="service-box">
+            <h3>Mobile App Development</h3>
+            <p>We are the top android application advancement organization who give perfect android applications in a practical manner for your changed requirements inside the specified time span.</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="service-box">
+            <h3>Digital Marketing</h3>
+            <p>A large portion of the Companies trust Asyma Solutions to deal with their online presence and fabricate dependable advertising resources.</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <div class="service-box">
+            <h3>Email Services</h3>
+            <p>Get proficient email facilitating administrations and make letter drops that coordinate your space name. Lift the trust of your image and advance it with each sent email!</p>
+            <a href="#">Read More</a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <h2>LEAVE YOUR MAIL</h2>
+        <p>We Are Available For Your Job Done.</p>
+        <form>
+            <input type="text" placeholder="Enter Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <button class="button" type="submit">SUBMIT</button>
+        </form>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials">
+        <h2>CLIENTS WHO TRUST US</h2>
+        <div class="testimonial-box">
+            <p>We have a mind blowing level of ability and the most state-of-the-art innovation – both of these empower us to execute the task on most noteworthy of level of guidelines...</p>
+        </div>
+        <div class="testimonial-box">
+            <p>Every one out of a group understands a typical development and moving towards a way of long haul objective. We are specific about flawlessness at all sides of undertaking...</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <p>© 2025 Nasima Solutions. All Rights Reserved.</p>
+        <p>Address: Vijay tower, Lalgarh palace complex, Bikaner Rajasthan - 334001</p>
+        <p>Phone Number: 1-855-478-2992</p>
+        <p>Important Links: Home | About Us | Services | Privacy Policy | Contact Us</p>
+        <p>Our Services: Web Design | Web Development | Digital Marketing | Mobile Application | SEO Services</p>
+        <p>Get In Touch: Enter Your Email | SUBMIT NOW</p>
+        <p>© Copyright 2024 | Asyma Solutions | Refund Policy | Terms And Conditions</p>
     </footer>
 
 </body>
