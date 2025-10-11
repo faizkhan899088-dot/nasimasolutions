@@ -196,6 +196,12 @@
             margin: 15px;
             border-radius: 15px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .service-box:hover {
             transform: translateY(-10px);
@@ -204,6 +210,17 @@
         .service-box h3 { font-size: 24px; margin-bottom: 15px; color: #f4a261; }
         .service-box p { font-size: 16px; color: #e7e7e7; margin-bottom: 15px; }
         .service-box a { color: #f4a261; font-weight: 600; }
+        .service-content {
+            flex: 1;
+            padding: 0 20px;
+        }
+        .service-image {
+            flex: 0 0 200px;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+        }
 
         /* Contact Section */
         .contact {
@@ -336,45 +353,66 @@
         <h2>OUR DIGITAL SERVICES</h2>
 
         <div class="service-box">
-            <h3>Website Design And Development</h3>
-            <p>Our fantastic website composition arrangements are likewise one reason why Asyma Solutions has become very famous in worldwide because of there best services about website designing projects. We offer responsive and SEO-optimized designs tailored to your brand.</p>
-            <a href="#">Read More</a>
+            <div class="service-image" style="background-image: url('https://via.placeholder.com/200x150?text=Website+Design');"></div>
+            <div class="service-content">
+                <h3>Website Design And Development</h3>
+                <p>Our fantastic website composition arrangements are likewise one reason why Asyma Solutions has become very famous in worldwide because of there best services about website designing projects. We offer responsive and SEO-optimized designs tailored to your brand.</p>
+                <a href="#">Read More</a>
+            </div>
         </div>
 
         <div class="service-box">
-            <h3>Web Hosting and Maintenance</h3>
-            <p>Bursting Fast Web Hosting with Virus Protection and Anti-spam. Top-quality facilitating is less expensive than you might suspect. Get the amazing facilitating that simple to coordinate and versatile, dependable, quick, and simple to utilize arrangements with 24/7 support.</p>
-            <a href="#">Read More</a>
+            <div class="service-image" style="background-image: url('https://via.placeholder.com/200x150?text=Web+Hosting');"></div>
+            <div class="service-content">
+                <h3>Web Hosting and Maintenance</h3>
+                <p>Bursting Fast Web Hosting with Virus Protection and Anti-spam. Top-quality facilitating is less expensive than you might suspect. Get the amazing facilitating that simple to coordinate and versatile, dependable, quick, and simple to utilize arrangements with 24/7 support.</p>
+                <a href="#">Read More</a>
+            </div>
         </div>
 
         <div class="service-box">
-            <h3>E-commerce Web Designing</h3>
-            <p>Most ideal approach to Sell your item on the web. We make online web based business applications for any sort of organizations with productive buying climate for purchasers and merchants, including payment gateway integration.</p>
-            <a href="#">Read More</a>
+            <div class="service-image" style="background-image: url('https://via.placeholder.com/200x150?text=E-commerce');"></div>
+            <div class="service-content">
+                <h3>E-commerce Web Designing</h3>
+                <p>Most ideal approach to Sell your item on the web. We make online web based business applications for any sort of organizations with productive buying climate for purchasers and merchants, including payment gateway integration.</p>
+                <a href="#">Read More</a>
+            </div>
         </div>
 
         <div class="service-box">
-            <h3>Mobile App Development</h3>
-            <p>We are the top android application advancement organization who give perfect android applications in a practical manner for your changed requirements within the specified time span, with cross-platform solutions available.</p>
-            <a href="#">Read More</a>
+            <div class="service-image" style="background-image: url('https://via.placeholder.com/200x150?text=Mobile+App');"></div>
+            <div class="service-content">
+                <h3>Mobile App Development</h3>
+                <p>We are the top android application advancement organization who give perfect android applications in a practical manner for your changed requirements within the specified time span, with cross-platform solutions available.</p>
+                <a href="#">Read More</a>
+            </div>
         </div>
 
         <div class="service-box">
-            <h3>Digital Marketing</h3>
-            <p>A large portion of the Companies trust Asyma Solutions to deal with their online presence and fabricate dependable advertising resources. We offer SEO, PPC, and social media marketing services.</p>
-            <a href="#">Read More</a>
+            <div class="service-image" style="background-image: url('https://via.placeholder.com/200x150?text=Digital+Marketing');"></div>
+            <div class="service-content">
+                <h3>Digital Marketing</h3>
+                <p>A large portion of the Companies trust Asyma Solutions to deal with their online presence and fabricate dependable advertising resources. We offer SEO, PPC, and social media marketing services.</p>
+                <a href="#">Read More</a>
+            </div>
         </div>
 
         <div class="service-box">
-            <h3>Email Services</h3>
-            <p>Get proficient email facilitating administrations and make letter drops that coordinate your space name. Lift the trust of your image and advance it with each sent email with advanced security features!</p>
-            <a href="#">Read More</a>
+            <div class="service-image" style="background-image: url('https://via.placeholder.com/200x150?text=Email+Services');"></div>
+            <div class="service-content">
+                <h3>Email Services</h3>
+                <p>Get proficient email facilitating administrations and make letter drops that coordinate your space name. Lift the trust of your image and advance it with each sent email with advanced security features!</p>
+                <a href="#">Read More</a>
+            </div>
         </div>
 
         <div class="service-box">
-            <h3>UI/UX Design</h3>
-            <p>Enhance user experience with our expert UI/UX design services, creating intuitive and visually appealing interfaces for websites and applications.</p>
-            <a href="#">Read More</a>
+            <div class="service-image" style="background-image: url('https://via.placeholder.com/200x150?text=UI/UX+Design');"></div>
+            <div class="service-content">
+                <h3>UI/UX Design</h3>
+                <p>Enhance user experience with our expert UI/UX design services, creating intuitive and visually appealing interfaces for websites and applications.</p>
+                <a href="#">Read More</a>
+            </div>
         </div>
     </div>
 
