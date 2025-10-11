@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nasima Solutions</title>
+    <title>Asyma Solutions</title>
     <style>
         body {
             margin: 0;
@@ -48,48 +48,40 @@
             background-color: #d62828;
         }
         .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 60px 20px;
         }
-        .content h3 {
+        .text-content {
+            flex: 1;
+            text-align: left;
+            padding-right: 20px;
+        }
+        .text-content h3 {
             font-size: 22px;
             margin-bottom: 10px;
             color: #fca311;
         }
-        .content h1 {
+        .text-content h1 {
             font-size: 48px;
             margin-bottom: 20px;
         }
-        .content p {
+        .text-content p {
             font-size: 18px;
             max-width: 700px;
-            margin: 0 auto 30px;
+            margin-bottom: 30px;
             line-height: 1.6;
         }
         .image-placeholder {
+            flex: 1;
             width: 300px;
             height: 200px;
             background-color: #f0f0f0;
-            margin: 20px auto;
+            margin: 20px;
             border-radius: 10px;
-        }
-        /* White image section after Contact */
-        .white-section {
-            background-color: white;
-            color: #1e3a8a;
-            padding: 60px 20px;
-        }
-        .white-section h2 {
-            font-size: 36px;
-            margin-bottom: 30px;
-        }
-        .white-section .image-box {
-            width: 200px;
-            height: 150px;
-            background-color: white;
-            margin: 15px auto;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            display: inline-block;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==');
+            background-size: cover;
         }
         footer {
             background-color: #14213d;
@@ -115,11 +107,14 @@
     </nav>
 
     <div class="content">
-        <h3>--- Digital Agency</h3>
-        <h1>Website Designing And Development Company</h1>
-        <p>We@site Solutions is a premier web designing and development company, providing top-notch web services since inception. Our team of skilled designers and developers ensures quality and innovation in every project.</p>
-        <button class="button">Know More</button>
-        <button class="button">Contact Us</button>
+        <div class="text-content">
+            <h3>--- Digital Agency</h3>
+            <h1>Website Designing And Development Company</h1>
+            <p>We@site Solutions is a premier web designing and development company, providing top-notch web services since inception. Our team of skilled designers and developers ensures quality and innovation in every project.</p>
+            <button class="button">Know More</button>
+            <button class="button">Contact Us</button>
+        </div>
+        <div class="image-placeholder"></div>
     </div>
     <footer>
         <p>© 2025 Nasima Solutions. All Rights Reserved.</p>
