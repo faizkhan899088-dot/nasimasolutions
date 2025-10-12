@@ -1,1 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Asyma Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Header/Navigation */
+        header {
+            background-color: #006064; /* Teal background */
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            color: #ff8f00; /* Orange logo text */
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ff8f00;
+        }
+
+        .get-in-touch {
+            background-color: #ff5722; /* Orange button */
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .get-in-touch:hover {
+            background-color: #e64a19;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1522071901874-81a78aa35063');
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px; /* Adjusted for fixed header */
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .contact h2 {
+            color: #006064;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .info-card h3 {
+            color: #006064;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-card p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card a {
+            color: #ff5722;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .info-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h3 {
+            color: #006064;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #ff5722;
+        }
+
+        .contact-form button {
+            padding: 0.8rem 2rem;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #e64a19;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem 5%;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+            }
+
+            .nav-links a {
+                margin: 0 0.8rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact h2 {
+                font-size: 1.7rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <!-- Load Poppins font for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <h2 class="logo">Asyma Solutions</h2>
+        <div class="nav-links">
+            <a href="index.html">Home</a>            
+          <a href="about.html">about Us</a>
+            <a href="services.html">services Us</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="contact-us.html">Contact Us</a>
+            <button class="get-in-touch">Get In Touch</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h1>Get In Touch</h1>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Phone Number</h2>
+        <div class="contact-info">
+            <div class="info-card">
+                <h3>Phone</h3>
+                <p>1-855-478-2992</p>
+                <p>1-855-478-2992</p>
+            </div>
+            <div class="info-card">
+                <h3>Email Address</h3>
+                <p><a href="mailto:info@asymasolutions.com">info@asymasolutions.com</a></p>
+                <p><a href="mailto:webmail@asymasolutions.com">webmail@asymasolutions.com</a></p>
+            </div>
+            <div class="info-card">
+                <h3>Office Address</h3>
+                <p>Vijay tower, Lalgarh palace complex, Bikaner Rajasthan - 334001</p>
+            </div>
+        </div>
+
+        <h2>Get In Touch</h2>
+        <div class="contact-form">
+            <h3>Ready to Get Started?</h3>
+            <form>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Subject" required>
+                <textarea placeholder="Message" rows="5" required></textarea>
+                <button type="submit">Send A Question</button>
+            </form>
+        </div>
+
+        <h2>Get In Touch</h2>
+        <div class="contact-info">
+            <div class="info-card">
+                <h3>Our Address:</h3>
+                <p>Give us a call or drop by anytime, we endeavour to answer all enquiries within 24 hours on business days. We will be happy to answer your questions.</p>
+                <p>Vijay tower, Lalgarh palace complex, Bikaner Rajasthan - 334001</p>
+                <p><a href="tel:1-855-478-2992">1-855-478-2992</a> <span>Give us a call</span></p>
+                <p><a href="mailto:info@asymasolutions.com">info@asymasolutions.com</a> <span>Get In Touch</span></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
