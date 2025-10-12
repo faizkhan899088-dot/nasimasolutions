@@ -37,7 +37,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         nav h2 {
-            font-size: clamp(20px, 5vw, 24px);
+            font-size: clamp(18px, 5vw, 22px);
             font-weight: 700;
             color: #f4a261;
             text-transform: uppercase;
@@ -49,8 +49,8 @@
             flex-wrap: wrap;
         }
         nav a {
-            margin: 10px;
-            font-size: clamp(14px, 4vw, 16px);
+            margin: 8px;
+            font-size: clamp(13px, 3.5vw, 15px);
             font-weight: 500;
             position: relative;
         }
@@ -74,9 +74,10 @@
             border: none;
             border-radius: 25px;
             cursor: pointer;
-            font-size: clamp(14px, 4vw, 16px);
-            margin: 10px 0;
+            font-size: clamp(13px, 3.5vw, 15px);
+            margin: 8px 0;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            touch-action: manipulation;
         }
         .button:hover {
             transform: translateY(-2px);
@@ -99,8 +100,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 20px;
+            padding: 30px 15px;
             background: url('https://nasimasolutions.pages.dev/bnr.png') no-repeat center/cover;
+            background-attachment: fixed;
             animation: fadeIn 1s ease-in;
         }
         @keyframes fadeIn {
@@ -109,82 +111,83 @@
         }
         .hero .text-content {
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             animation: slideInLeft 1s ease-out;
         }
         @keyframes slideInLeft {
-            from { transform: translateX(-100px); opacity: 0; }
+            from { transform: translateX(-50px); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
         }
         .hero h3 {
             color: #f4a261;
-            font-size: clamp(18px, 5vw, 22px);
-            margin-bottom: 15px;
+            font-size: clamp(16px, 4.5vw, 20px);
+            margin-bottom: 12px;
             text-transform: uppercase;
         }
         .hero h1 {
-            font-size: clamp(28px, 8vw, 40px);
-            margin-bottom: 20px;
+            font-size: clamp(24px, 7vw, 36px);
+            margin-bottom: 15px;
             color: #f5f6f5;
             font-weight: 700;
         }
         .hero p {
-            font-size: clamp(14px, 4vw, 16px);
-            margin-bottom: 20px;
+            font-size: clamp(13px, 3.5vw, 15px);
+            margin-bottom: 15px;
             color: #e7e7e7;
         }
         .hero .image-placeholder {
             width: 100%;
-            max-width: 300px;
-            height: 200px;
-            margin: 20px;
-            border-radius: 15px;
+            max-width: 280px;
+            height: 180px;
+            margin: 15px auto;
+            border-radius: 12px;
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid #e76f51;
             animation: pulse 2s infinite;
         }
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            50% { transform: scale(1.03); }
             100% { transform: scale(1); }
         }
 
         /* About Section */
         .about {
             background-color: #4a4e69;
-            padding: 40px 20px;
+            padding: 30px 15px;
             text-align: left;
             animation: fadeInUp 1s ease-out;
         }
         @keyframes fadeInUp {
-            from { transform: translateY(50px); opacity: 0; }
+            from { transform: translateY(30px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
         .about h2 {
             color: #f4a261;
-            font-size: clamp(28px, 6vw, 36px);
-            margin-bottom: 20px;
+            font-size: clamp(24px, 6vw, 32px);
+            margin-bottom: 15px;
             text-align: center;
             position: relative;
         }
         .about h2::after {
             content: '';
-            width: 50px;
+            width: 40px;
             height: 3px;
             background: #e76f51;
             position: absolute;
-            bottom: -10px;
+            bottom: -8px;
             left: 50%;
             transform: translateX(-50%);
         }
         .about h3 {
             color: #f5f6f5;
-            font-size: clamp(22px, 5vw, 26px);
-            margin-bottom: 15px;
+            font-size: clamp(20px, 5vw, 24px);
+            margin-bottom: 12px;
         }
         .about p {
-            font-size: clamp(14px, 4vw, 16px);
+            font-size: clamp(13px, 3.5vw, 15px);
             color: #c9d1d3;
+            margin-bottom: 10px;
         }
 
         /* Stats Section */
@@ -192,126 +195,121 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 30px 20px;
+            padding: 20px 15px;
             background: linear-gradient(90deg, #006d77, #4a4e69);
         }
         .stat-box {
-            flex: 1 1 120px;
-            margin: 10px;
+            flex: 1 1 100px;
+            margin: 8px;
             text-align: center;
-            padding: 15px;
+            padding: 12px;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
+            border-radius: 8px;
             transition: transform 0.3s ease;
         }
         .stat-box:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
         }
         .stat-box h3 {
-            font-size: clamp(24px, 6vw, 28px);
+            font-size: clamp(22px, 5.5vw, 26px);
             color: #f4a261;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .stat-box p {
-            font-size: clamp(12px, 3.5vw, 14px);
+            font-size: clamp(12px, 3vw, 13px);
             color: #c9d1d3;
         }
 
         /* Services Section */
         .services {
-            padding: 40px 20px;
+            padding: 30px 15px;
             background-color: #4a4e69;
             text-align: center;
         }
         .services .section-image {
             width: 100%;
-            height: 150px;
+            height: 120px;
             background-size: cover;
             background-position: center;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
         }
         .services h2 {
             color: #f4a261;
-            font-size: clamp(28px, 6vw, 36px);
-            margin-bottom: 20px;
+            font-size: clamp(24px, 6vw, 32px);
+            margin-bottom: 15px;
         }
         .service-box {
             background: linear-gradient(135deg, #006d77, #264653);
-            padding: 20px;
-            margin: 10px;
-            border-radius: 15px;
+            padding: 15px;
+            margin: 8px 0;
+            border-radius: 12px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         .service-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
         .service-box h3 {
-            font-size: clamp(20px, 5vw, 24px);
-            margin-bottom: 10px;
+            font-size: clamp(18px, 4.5vw, 22px);
+            margin-bottom: 8px;
             color: #f4a261;
         }
         .service-box p {
-            font-size: clamp(14px, 4vw, 16px);
+            font-size: clamp(13px, 3.5vw, 15px);
             color: #e7e7e7;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .service-box a {
             color: #f4a261;
             font-weight: 600;
+            font-size: clamp(12px, 3vw, 14px);
         }
         .service-content {
-            padding: 10px;
+            padding: 8px;
         }
-        .service-image {
+        .service-image, .website-design-image {
             width: 100%;
-            height: 150px;
+            max-width: 280px;
+            height: 120px;
             background-size: cover;
             background-position: center;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-        .website-design-image {
-            width: 100%;
-            height: 100px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            margin-bottom: 10px;
+            border-radius: 8px;
+            margin-bottom: 8px;
         }
 
         /* Contact Section */
         .contact {
             background: linear-gradient(135deg, #006d77, #4a4e69);
-            padding: 40px 20px;
+            padding: 30px 15px;
             text-align: center;
         }
         .contact h2 {
             color: #f4a261;
-            font-size: clamp(28px, 6vw, 36px);
-            margin-bottom: 15px;
+            font-size: clamp(24px, 6vw, 32px);
+            margin-bottom: 12px;
         }
         .contact p {
             color: #c9d1d3;
-            font-size: clamp(14px, 4vw, 16px);
-            margin-bottom: 20px;
+            font-size: clamp(13px, 3.5vw, 15px);
+            margin-bottom: 15px;
         }
         .contact form {
             display: flex;
             flex-direction: column;
-            max-width: 500px;
+            max-width: 100%;
             margin: 0 auto;
+            padding: 0 10px;
         }
         .contact input, .contact textarea {
-            padding: 12px;
-            margin-bottom: 15px;
+            padding: 10px;
+            margin-bottom: 12px;
             border-radius: 5px;
             border: none;
-            font-size: clamp(14px, 4vw, 16px);
+            font-size: clamp(13px, 3.5vw, 15px);
             background: rgba(255, 255, 255, 0.1);
             color: #f5f6f5;
             transition: background 0.3s ease;
@@ -321,47 +319,47 @@
             outline: none;
         }
         .contact button {
-            width: 150px;
+            width: 140px;
             margin: 0 auto;
         }
 
         /* Testimonials Section */
         .testimonials {
             background-color: #4a4e69;
-            padding: 40px 20px;
+            padding: 30px 15px;
             text-align: center;
         }
         .testimonials h2 {
             color: #f4a261;
-            font-size: clamp(28px, 6vw, 36px);
-            margin-bottom: 20px;
+            font-size: clamp(24px, 6vw, 32px);
+            margin-bottom: 15px;
         }
         .testimonial-box {
             background: linear-gradient(135deg, #006d77, #264653);
-            padding: 20px;
-            margin: 10px;
-            border-radius: 15px;
+            padding: 15px;
+            margin: 8px 0;
+            border-radius: 12px;
             transition: transform 0.3s ease;
         }
         .testimonial-box:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
         }
         .testimonial-box p {
-            font-size: clamp(14px, 4vw, 16px);
+            font-size: clamp(13px, 3.5vw, 15px);
             color: #e7e7e7;
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
         /* Footer */
         footer {
             background-color: #264653;
-            padding: 30px 20px;
+            padding: 20px 15px;
             text-align: center;
         }
         footer p {
-            margin: 8px 0;
+            margin: 6px 0;
             color: #c9d1d3;
-            font-size: clamp(12px, 3.5vw, 14px);
+            font-size: clamp(12px, 3vw, 13px);
         }
         footer a {
             color: #f4a261;
@@ -377,12 +375,15 @@
             nav {
                 flex-direction: column;
                 align-items: flex-start;
+                padding: 10px 15px;
             }
             .nav-links {
                 display: none;
                 width: 100%;
                 flex-direction: column;
                 align-items: flex-start;
+                background: rgba(0, 109, 119, 0.95);
+                padding: 10px;
             }
             .nav-links.active {
                 display: flex;
@@ -390,20 +391,21 @@
             .hamburger {
                 display: block;
                 position: absolute;
-                top: 20px;
-                right: 20px;
+                top: 15px;
+                right: 15px;
             }
             nav a {
-                margin: 10px 0;
+                margin: 8px 0;
             }
             .hero {
-                padding: 30px 15px;
+                padding: 20px 10px;
             }
             .hero .text-content {
                 padding: 10px;
             }
             .hero .image-placeholder {
-                height: 150px;
+                height: 140px;
+                max-width: 260px;
             }
             .stats {
                 flex-direction: column;
@@ -411,43 +413,64 @@
             }
             .stat-box {
                 width: 100%;
-                max-width: 300px;
+                max-width: 280px;
             }
             .service-box {
                 flex-direction: column;
                 align-items: center;
             }
-            .service-image {
-                width: 100%;
-                max-width: 300px;
+            .service-image, .website-design-image {
+                max-width: 260px;
+                height: 100px;
             }
-            .contact form {
-                max-width: 100%;
+            .services .section-image {
+                height: 100px;
             }
         }
 
         @media (max-width: 480px) {
             nav h2 {
-                font-size: clamp(18px, 5vw, 20px);
+                font-size: clamp(16px, 4.5vw, 18px);
+            }
+            .hamburger {
+                font-size: 20px;
+                top: 12px;
+                right: 12px;
             }
             .hero h1 {
-                font-size: clamp(24px, 7vw, 30px);
+                font-size: clamp(22px, 6.5vw, 28px);
+            }
+            .hero h3 {
+                font-size: clamp(14px, 4vw, 16px);
             }
             .hero p {
-                font-size: clamp(12px, 3.5vw, 14px);
+                font-size: clamp(12px, 3vw, 13px);
             }
             .button {
-                padding: 8px 15px;
-                font-size: clamp(12px, 3.5vw, 14px);
+                padding: 8px 12px;
+                font-size: clamp(12px, 3vw, 13px);
             }
             .about h2, .services h2, .contact h2, .testimonials h2 {
-                font-size: clamp(24px, 6vw, 28px);
+                font-size: clamp(22px, 5.5vw, 26px);
             }
-            .service-image, .website-design-image {
-                height: 120px;
+            .about h3 {
+                font-size: clamp(18px, 4.5vw, 20px);
             }
-            .services .section-image {
-                height: 100px;
+            .service-box h3 {
+                font-size: clamp(16px, 4vw, 18px);
+            }
+            .service-box p, .testimonial-box p, .contact p {
+                font-size: clamp(12px, 3vw, 13px);
+            }
+            .contact input, .contact textarea {
+                padding: 8px;
+                font-size: clamp(12px, 3vw, 13px);
+            }
+            .contact button {
+                width: 120px;
+            }
+            .footer p {
+                font-size: clamp(11px, 2.8vw, 12px);
             }
         }
     </style>
@@ -483,8 +506,8 @@
     <div id="about" class="about">
         <h2>ABOUT US</h2>
         <h3>Web Design Company</h3>
-        <p>Asyma Solutions Website Solutions is a chief web planning organization which has been giving web empowered assistance since 2010. We have developed and dominated in the administrations we give. The purpose behind our development is that we treat every single customer as an individual from Asyma Solutions FAMILY. We are adaptable in client's requests and the explanation we're ready to offer such high incentive for your cash is that there is a pool of profoundly taught, all around prepared IT experts and visual specialists in our Team, who are moved on from chief establishments across India and abroad.</p>
-        <p>The typical cost for basic items is similarly lower than other western nations. We offer more benefit for your cash with subjective work. The way in to our degree of value lay in comprehension of 3 key fixings—thoughts, usage, and administration. Just when they meet, you will acquire viable web answers for the growing requirements of your business. Nothing is so commendable in the virtual world as thoughts. We consider them to be the primary object of our work. Simply the best and most imaginative thoughts have the rights to be actualized, and that carries us to the subsequent fixing. Our commitment to excellence has earned us numerous accolades over the years.</p>
+        <p>Asyma Solutions Website Solutions is a chief web planning organization which has been giving web enabled assistance since 2010. We have developed and dominated in the administrations we give. The purpose behind our development is that we treat every single customer as an individual from Asyma Solutions FAMILY. We are adaptable in client's requests and the explanation we're ready to offer such high incentive for your cash is that there is a pool of profoundly taught, all around prepared IT experts and visual specialists in our Team, who are moved on from chief establishments across India and abroad.</p>
+        <p>The typical cost for basic items is similarly lower than other western nations. We offer more benefit for your cash with qualitative work. The way in to our degree of value lay in comprehension of 3 key fixings—thoughts, usage, and administration. Just when they meet, you will acquire viable web answers for the growing requirements of your business. Nothing is so commendable in the virtual world as thoughts. We consider them to be the primary object of our work. Simply the best and most imaginative thoughts have the rights to be actualized, and that carries us to the subsequent fixing. Our commitment to excellence has earned us numerous accolades over the years.</p>
     </div>
 
     <!-- Stats Section -->
@@ -516,7 +539,7 @@
         <div class="section-image" style="background-image: url('https://via.placeholder.com/1200x200?text=Digital+Services');"></div>
         <h2>OUR DIGITAL SERVICES</h2>
         <div class="service-box">
-            <div class="website-design-image" style="background-image: url('');"></div>
+            <div class="website-design-image" style="background-image: url('https://via.placeholder.com/280x120?text=Website+Design');"></div>
             <div class="service-content">
                 <h3>Website Design And Development</h3>
                 <p>Our fantastic website composition arrangements are likewise one reason why Asyma Solutions has become very famous in worldwide because of there best services about website designing projects. We offer responsive and SEO-optimized designs tailored to your brand.</p>
@@ -556,7 +579,7 @@
             </div>
         </div>
         <div class="service-box">
-            <div class="service-image" style="background-image: url('https://via.placeholder.com/200x150?text=Email+Services');"></div>
+            <div class="service-image" style="background-image: url('https://via.placeholder.com/280x120?text=Email+Services');"></div>
             <div class="service-content">
                 <h3>Email Services</h3>
                 <p>Get proficient email facilitating administrations and make letter drops that coordinate your space name. Lift the trust of your brand and advance it with each sent email with advanced security features!</p>
@@ -615,7 +638,16 @@
 
     <script>
         document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('#nav-toggle').checked = false;
+            });
         });
     </script>
 </body>
