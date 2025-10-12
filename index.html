@@ -91,6 +91,10 @@
             cursor: pointer;
             color: #f4a261;
             padding: 5px;
+            transition: transform 0.3s ease;
+        }
+        .hamburger.active {
+            transform: rotate(90deg);
         }
         #nav-toggle {
             display: none;
@@ -387,9 +391,13 @@
                 padding: 10px 0;
                 margin-top: 10px;
                 border-radius: 5px;
+                transition: max-height 0.3s ease;
+                max-height: 0;
+                overflow: hidden;
             }
             .nav-links.active {
                 display: flex;
+                max-height: 300px; /* Adjust based on content height */
             }
             .hamburger {
                 display: block;
@@ -490,11 +498,12 @@
         <input type="checkbox" id="nav-toggle" aria-controls="nav-links" aria-expanded="false">
         <label for="nav-toggle" class="hamburger" aria-label="Toggle menu">☰</label>
         <div class="nav-links" id="nav-links">
-            <a href="home">Home</a>
-            <a href="about">About Us</a>
-            <a href="services">Services</a>
-            <a href="privacy">Privacy Policy</a>
-            <a href="contact">Contact Us</a>
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#contact">Contact Us</a>
+            <button class="button">Get In Touch</button>
         </div>
     </nav>
 
@@ -648,7 +657,10 @@
         document.querySelector('.hamburger').addEventListener('click', () => {
             const navToggle = document.querySelector('#nav-toggle');
             const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            navToggle.checked = !navToggle.checked; // Ensure checkbox state toggles
             navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
             navToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
         });
 
@@ -657,7 +669,9 @@
             link.addEventListener('click', () => {
                 const navLinks = document.querySelector('.nav-links');
                 const navToggle = document.querySelector('#nav-toggle');
+                const hamburger = document.querySelector('.hamburger');
                 navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
                 navToggle.checked = false;
                 navToggle.setAttribute('aria-expanded', 'false');
             });
@@ -670,6 +684,7 @@
             const navLinks = document.querySelector('.nav-links');
             if (navToggle.checked && !navLinks.contains(event.target) && event.target !== hamburger) {
                 navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
                 navToggle.checked = false;
                 navToggle.setAttribute('aria-expanded', 'false');
             }
