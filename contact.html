@@ -23,7 +23,7 @@
             background-color: #006064; /* Teal background */
             padding: 1.5rem 5%;
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Center the content */
             align-items: center;
             position: fixed;
             width: 100%;
@@ -37,6 +37,13 @@
             font-size: 1.8rem;
             font-weight: 700;
             text-transform: uppercase;
+            position: absolute;
+            left: 5%; /* Position logo to the left */
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
         }
 
         .nav-links {
@@ -213,6 +220,17 @@
             header {
                 flex-direction: column;
                 padding: 1rem 5%;
+                justify-content: flex-start; /* Align items to start for logo positioning */
+            }
+
+            .logo {
+                position: static; /* Reset positioning on mobile */
+                margin-bottom: 1rem;
+            }
+
+            .nav-container {
+                width: 100%;
+                text-align: center;
             }
 
             .nav-links {
@@ -276,16 +294,18 @@
 <body>
     <!-- Header/Navigation -->
     <header>
-        <h2 class="logo">Nasima Solutions</h2>
-        <input type="checkbox" id="nav-toggle" aria-controls="nav-links" aria-expanded="false">
-        <label for="nav-toggle" class="hamburger" aria-label="Toggle menu">☰</label>
-        <div class="nav-links">
-            <a href="index.html">Home</a>            
-            <a href="about.html">about Us</a>
-            <a href="services.html">services Us</a>
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="contact-us.html">Contact Us</a>
-            <button class="get-in-touch">Contact Us</button>
+        <div class="logo">Nasima Solutions</div>
+        <div class="nav-container">
+            <input type="checkbox" id="nav-toggle" aria-controls="nav-links" aria-expanded="false">
+            <label for="nav-toggle" class="hamburger" aria-label="Toggle menu">☰</label>
+            <div class="nav-links">
+                <a href="index.html">Home</a>            
+                <a href="about.html">about Us</a>
+                <a href="services.html">services Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="contact-us.html">Contact Us</a>
+                <button class="get-in-touch">Contact Us</button>
+            </div>
         </div>
     </header>
 
