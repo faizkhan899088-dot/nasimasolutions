@@ -3,171 +3,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - nasima Solutions</title>
+    <title>About Us - Nasima Solutions</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            line-height: 1.6;
+            linePatterns: 1.6;
             color: #333;
+            background-color: #f4f7fa;
         }
 
-        /* Navigation */
-        .navbar {
-            background-color: #2c3e50;
-            padding: 1rem 2rem;
+        /* Header/Navigation */
+        header {
+            background-color: #006a6a; /* Teal background like in the screenshot */
+            padding: 1.5rem 3rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .navbar a {
+        .logo {
+            color: #ff6600; /* Orange color for logo */
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
             color: white;
             text-decoration: none;
-            margin: 0 1rem;
+            margin: 0 1.2rem;
             font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
-        .navbar a:hover {
-            color: #3498db;
+        .nav-links a:hover {
+            color: #ff6600;
+        }
+
+        .get-in-touch {
+            background-color: #ff6600; /* Orange button */
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .get-in-touch:hover {
+            background-color: #e65c00;
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1516321310763-493d3c6f3867');
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1516321310763-493d3c6f3867');
             background-size: cover;
             background-position: center;
-            height: 60vh;
+            height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            margin-top: 60px;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease-out;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            font-weight: 300;
         }
 
         /* About Content */
         .about-content {
             max-width: 1200px;
-            margin: 2rem auto;
+            margin: 3rem auto;
             padding: 0 2rem;
         }
 
         .about-content h2 {
-            color: #2c3e50;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+            color: #006a6a;
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
             text-align: center;
+            font-weight: 600;
         }
 
         .about-content p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             margin-bottom: 1.5rem;
-            line-height: 1.8;
+            line-height: 1.9;
+            color: #555;
         }
 
         /* Stats Section */
         .stats {
-            background-color: #f8f9fa;
-            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #ff6600, #ff8833);
+            padding: 4rem 2rem;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
             text-align: center;
+            color: white;
         }
 
         .stat-item {
-            margin: 1rem;
-            min-width: 150px;
+            margin: 1.5rem;
+            min-width: 180px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 0.8s ease forwards;
+            animation-delay: calc(0.2s * var(--i));
         }
 
         .stat-item h3 {
-            font-size: 2.5rem;
-            color: #3498db;
+            font-size: 3rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
         }
 
         .stat-item p {
-            font-size: 1.1rem;
-            color: #666;
+            font-size: 1.2rem;
+            font-weight: 300;
         }
 
         /* Team Section */
         .team {
             max-width: 1200px;
-            margin: 2rem auto;
+            margin: 3rem auto;
             padding: 0 2rem;
         }
 
         .team h2 {
-            color: #2c3e50;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            color: #006a6a;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
             text-align: center;
+            font-weight: 600;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .team-card h3 {
+            font-size: 1.5rem;
+            color: #006a6a;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .team-card p {
+            font-size: 1rem;
+            color: #666;
+            padding: 0 1rem 1.5rem;
         }
 
         /* Know More Button */
         .know-more {
             display: inline-block;
-            padding: 0.8rem 2rem;
-            background-color: #3498db;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #ff6600, #ff8833);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 1rem;
-            transition: background-color 0.3s;
+            border-radius: 50px;
+            margin-top: 1.5rem;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .know-more:hover {
-            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                margin: 0.5rem;
+            }
+
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
             }
 
             .about-content h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .stats {
-                flex-direction: column;
-                align-items: center;
+                padding: 2rem;
+            }
+
+            .stat-item {
+                min-width: 140px;
+            }
+
+            .team h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .get-in-touch {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                height: 50vh;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <h2> Nasima Solutions</h2>
+    <!-- Header/Navigation -->
+    <header>
+        <div class="logo">Nasima Solutions</div>
         <div class="nav-links">
-            <a href="home">Home</a>
-            <a href="about">About Us</a>
-            <a href="services">Services</a>
-            <a href="privacy">Privacy Policy</a>
-            <a href="contact">Contact Us</a>
-            <button class="button">Get In Touch</button>
+            <a href="home.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="contact.html">Contact Us</a>
+            <button class="get-in-touch">Get In Touch</button>
         </div>
-    </nav>
-
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div>
+        <div class="hero-content">
             <h1>About Us</h1>
             <p>Web Design Company</p>
         </div>
@@ -176,7 +336,7 @@
     <!-- About Content -->
     <section class="about-content">
         <h2>Nasima Solutions Website Solutions</h2>
-        <p>Nasima Solutions Website Solutions is a chief web planning organization which has been giving web empowered assistance. Since origin we have developed and dominated in the administrations we give. The purpose behind our development is that we treat every single customer as an individual from Asyma Solutions FAMILY.</p>
+        <p>Nasima Solutions Website Solutions is a chief web planning organization which has been giving web empowered assistance. Since origin we have developed and dominated in the administrations we give. The purpose behind our development is that we treat every single customer as an individual from Nasima Solutions FAMILY.</p>
         <p>We are adaptable in client's requests and the explanation we're ready to offer such high incentive for your cash is that there is a pool of profoundly taught, all around prepared IT experts and visual specialists in our Team, who are moved on from chief establishments.</p>
         <p>The typical cost for basic items is similarly lower than other western nations. We offer more benefit for your cash and you with subjective work. The way in to our degree of value lay in comprehension of 3 key fixings—thoughts, usage and administration. Just when they meet, you will acquire viable web answers for the developing requirements of your business.</p>
         <p>Nothing is so commendable in the virtual world as thoughts. We consider them to be the primary object of our work. Simply the best and most imaginative thoughts have the rights to be actualized, and that carries us to the subsequent fixing.</p>
@@ -185,28 +345,59 @@
 
     <!-- Stats Section -->
     <section class="stats">
-        <div class="stat-item">
+        <div class="stat-item" style="--i: 1">
             <h3>+149</h3>
             <p>Cups Of Tea</p>
         </div>
-        <div class="stat-item">
+        <div class="stat-item" style="--i: 2">
             <h3>+12</h3>
             <p>Working Hours</p>
         </div>
-        <div class="stat-item">
+        <div class="stat-item" style="--i: 3">
             <h3>+50</h3>
-            <p>Aweseom Developers</p>
+            <p>Awesome Developers</p>
         </div>
-        <div class="stat-item">
+        <div class="stat-item" style="--i: 4">
             <h3>+99</h3>
-            <p>Winnning Awards</p>
+            <p>Winning Awards</p>
         </div>
     </section>
 
     <!-- Team Section -->
     <section class="team">
         <h2>Our Team</h2>
-        <!-- Team members can be added here -->
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="John Doe">
+                <h3>John Doe</h3>
+                <p>CEO & Lead Developer</p>
+            </div>
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jane Smith">
+                <h3>Jane Smith</h3>
+                <p>UI/UX Designer</p>
+            </div>
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Mike Johnson">
+                <h3>Mike Johnson</h3>
+                <p>Project Manager</p>
+            </div>
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Emily Brown">
+                <h3>Emily Brown</h3>
+                <p>Frontend Developer</p>
+            </div>
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1556157382-1c7d6f7b03a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Alex Lee">
+                <h3>Alex Lee</h3>
+                <p>Backend Developer</p>
+            </div>
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Sarah Wilson">
+                <h3>Sarah Wilson</h3>
+                <p>Graphic Designer</p>
+            </div>
+        </div>
     </section>
 </body>
 </html>
