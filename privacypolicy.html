@@ -1,1 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Asyma Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Header/Navigation */
+        header {
+            background-color: #006064; /* Teal background */
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            color: #ff8f00; /* Orange logo text */
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ff8f00;
+        }
+
+        .get-in-touch {
+            background-color: #ff5722; /* Orange button */
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .get-in-touch:hover {
+            background-color: #e64a19;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1506784898025-7e736cd1a588');
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px; /* Adjusted for fixed header */
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Privacy Policy Section */
+        .privacy-policy {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .privacy-policy h2 {
+            color: #006064;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .privacy-policy h3 {
+            color: #006064;
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .privacy-policy p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .privacy-policy ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-policy ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Team Section */
+        .team {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .team h2 {
+            color: #006064;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .team-card h3 {
+            font-size: 1.5rem;
+            color: #006064;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .team-card p {
+            font-size: 1rem;
+            color: #666;
+            padding-bottom: 1.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem 5%;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+            }
+
+            .nav-links a {
+                margin: 0 0.8rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .privacy-policy h2 {
+                font-size: 1.7rem;
+            }
+
+            .privacy-policy h3 {
+                font-size: 1.3rem;
+            }
+
+            .team h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <!-- Load Poppins font for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <h2 class="logo">Asyma Solutions</h2>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="contact.html">Contact Us</a>
+            <button class="get-in-touch">Get In Touch</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h1>Asyma Solutions Privacy Policy</h1>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <section class="privacy-policy">
+        <h2>Purpose:</h2>
+        <p>asymasolutions characterizes "Individual Data" as any information from which it is reasonable to straightforwardly decide the personality of a person. Any promoted terms not characterized in this Privacy Policy have the implications given in the Service's License and Product Agreement (the "Client Agreement"). This Privacy Policy might be refreshed by asymasolutions.com occasionally. asymasolutions.com will give notice of physically huge changes to the Privacy Policy by posting notice on its sites.</p>
+
+        <h3>PERSONAL IDENTIFICATION INFORMATION</h3>
+        <p>We might gather individual recognizable proof data from Users in an assortment of ways, including, yet not restricted to, when Users visit our site, purchase an item and finish up a structure, Users might be requested, as suitable, name, email address, telephone number and address. Clients may, be that as it may, visit our Site secretly. We will gather individual ID data from Users provided that they deliberately submit such data to us. Clients can generally decline to supply actually distinguishing proof data, then again, actually it might keep them from participating in certain Site related exercises.</p>
+
+        <h3>HOW WE PROTECT YOUR INFORMATION</h3>
+        <p>We embrace fitting information assortment, stockpiling and handling practices and safety efforts to secure against unapproved access, adjustment, exposure or annihilation of your own data, username, secret phrase, exchange data and information put away on our Site.</p>
+
+        <h3>CHANGES TO THIS PRIVACY POLICY</h3>
+        <p>Interactive Knowledge System has the circumspection to refresh this protection strategy whenever. At the point when we do, we will reconsider the refreshed date at the lower part of this page. We urge Users to as often as possible check this page for any progressions to remain educated with regards to how we are assisting with securing the individual data we gather. You recognize and concur that it is your obligation to survey this security strategy occasionally and become mindful of changes.</p>
+
+        <h3>CALL RECORDING</h3>
+        <p>For our inner observing of nature of administration your calls might be recorded. This would be unequivocally advised to you and you are at freedom to separate the call and solicitation for a call which may not be recorded.</p>
+
+        <h3>COOKIES & PASSIVE DATA COLLECTION</h3>
+        <p>asymasolutions.com utilizes treat, IP address, and URL data to improve and additionally foster the Service, and to give upgraded or geologically separated elements and administration levels to Users, where accessible. asymasolutions.com utilizes treats to save User screen names, meeting approvals, and on Users' programs and hard drives, and may utilize them to give personalized items and administrations to those Users, as they become accessible.</p>
+        <p>IP Addresses additionally assist us with diagnosing network clog, issues with our workers and in any case aid the organization and conveyance of the Service to our Users.</p>
+        <p>Your own information may utilized for:</p>
+        <ul>
+            <li>Enable you to buy and download items, obtain admittance to administrations and participate in offered exercises</li>
+        </ul>
+
+        <h3>Do we share your data?</h3>
+        <p>We don't sell or lease your own information to outsiders.</p>
+        <p>We might share certain individual information (as depicted beneath) with:</p>
+        <ul>
+            <li>Selected accomplices performing administrations for our sake.</li>
+            <li>We might share a portion of your own information, like your location or telephone number with certain chose accomplices to empower them to reach you for our sake of items.</li>
+        </ul>
+        <p>In conclusion, we might share your own information:</p>
+        <ul>
+            <li>at the point when important to convey the item you require, for example, with an installment card supplier who we use to handle your Visa exchange;</li>
+            <li>when approved by law or important to consent to a substantial legitimate interaction;</li>
+            <li>when needed to ensure and guard the rights or property of Company, including the security of our items.</li>
+            <li>at the point when important to ensure the individual security, property or different privileges of people in general, Company or its clients or workers or regarding an offer of all or part of our business.</li>
+        </ul>
+        <p>In case we are legitimately constrained to uncover your own information to an outsider, we will utilize monetarily sensible endeavors to advise you ahead of an exposure except if legitimately denied. In case we are engaged with a consolidation, obtaining or resource deal, we will submit to this Privacy Policy, and any influenced clients will be educated on the off chance that we move any close to home information to an outsider or on the other hand if individual information becomes subject to an alternate protection strategy accordingly.</p>
+
+        <h3>Your rights over your data</h3>
+        <p>You reserve the option to get some information about the individual information we measure about you, the reason and nature of the handling, and to give data on who we share it with.</p>
+        <p>You reserve the privilege to demand that we update, right, or erase your own information whenever. Except if you demand us to erase your information, kindly note that we might save your own information for one year after you quit being a client (however we commonly keep your own information no longer than is sensibly needed given the reasons for which the information was gathered).</p>
+        <p>You reserve the option to anticipate that we should ensure your own information and guard it. We make a solid effort to ensure our security items and our clients from unapproved admittance to or unapproved alteration, exposure or obliteration of the data we hold. Specifically:</p>
+        <ul>
+            <li>We maintain this Privacy Policy consistently regarding all information that we gather from you</li>
+            <li>We limit the utilization and revelation of your own information, and work to guarantee that anybody with whom we offer such data treats that data with the protection and security it deserves; and</li>
+            <li>We have set up industry-acknowledged physical, specialized and authoritative practices to shield and get the data we gather.</li>
+        </ul>
+
+        <h3>asymasolutions SERVICES PROVIDERS</h3>
+        <p>asymasolutions.com doesn't reveal Personal Data to outsiders, but to deal with Mastercard data for orders. Notwithstanding, at a future time, asymasolutions.com may have to give clients' Personal Data to other outsiders to convey explicit administrations to the client, (for example, facilitating administrations or backing administrations). These outsiders will be needed to cling to Safe Harbor Privacy Principles or at least asymasolutions.com will require the outsider to ensure they follow security protection equivalent to Data-Align's. Clients will likewise be given a component to quit having their Personal Data saw by such outsiders.</p>
+
+        <h3>LEGAL REQUIREMENTS</h3>
+        <p>asymasolutions doesn't reveal Personal Data, except if exposure is important to conform to an enforceable government solicitation like a warrant.</p>
+
+        <h3>CHANGE OF OWNERSHIP</h3>
+        <p>In case of an adjustment of proprietorship, or an immediate consolidation or obtaining with another substance, we maintain whatever authority is needed to move all of asymasolutions.com User data, including Personal Data, to a different element. We will utilize monetarily sensible endeavors to tell you (by posting on our site or an email to the email address you give when you register) of any adjustment in proprietorship, consolidation or obtaining of asymasolutions.com resources by an outsider, and you might decide to alter any of your enrollment data around then.</p>
+        <p>asymasolutions.com utilizes industry standard safety efforts to ensure against the misfortune, misuse and change of the data under our influence. In spite of the fact that we put forth great confidence attempts to store the data gathered by asymasolutions.com in a secure working climate that isn't accessible to the general population, asymasolutions.com can't ensure total security. Further, while we find sensible ways to guarantee the uprightness and security of our organization and frameworks, we can't ensure that our safety efforts will forestall outsider "wafers" from acquiring this data.</p>
+        <p>You may, whenever, decide to address or refresh the data you have submitted to asymasolutions.com by updating your account on our site.</p>
+        <p>In the event that you drop your record, your Personal Data and other data might be held in our document or reinforcement records.</p>
+
+        <h3>Contacting US</h3>
+        <p>In the event that you have any inquiry concerning this Privacy Policy, the acts of this site, or your dealings with this site, than if it's not too much trouble, mail us on info@asymasolutions.com</p>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <h2>Our Team</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="John Doe">
+                <h3>John Doe</h3>
+                <p>CEO & Lead Developer</p>
+            </div>
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jane Smith">
+                <h3>Jane Smith</h3>
+                <p>UI/UX Designer</p>
+            </div>
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Mike Johnson">
+                <h3>Mike Johnson</h3>
+                <p>Project Manager</p>
+            </div>
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Emily Brown">
+                <h3>Emily Brown</h3>
+                <p>Frontend Developer</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
