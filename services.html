@@ -1,1 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Asyma Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Header/Navigation */
+        header {
+            background-color: #006064; /* Teal background */
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            color: #ff8f00; /* Orange logo text */
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ff8f00;
+        }
+
+        .get-in-touch {
+            background-color: #ff5722; /* Orange button */
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .get-in-touch:hover {
+            background-color: #e64a19;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px; /* Adjusted for fixed header */
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .services h2 {
+            color: #006064;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #006064;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Team Section */
+        .team {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .team h2 {
+            color: #006064;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .team-card h3 {
+            font-size: 1.5rem;
+            color: #006064;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .team-card p {
+            font-size: 1rem;
+            color: #666;
+            padding-bottom: 1.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem 5%;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+            }
+
+            .nav-links a {
+                margin: 0 0.8rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .services h2, .team h2 {
+                font-size: 2rem;
+            }
+
+            .service-card, .team-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+    <!-- Load Poppins font for modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <h2 class="logo">Asyma Solutions</h2>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="contact.html">Contact Us</a>
+            <button class="get-in-touch">Get In Touch</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h1>Our Services</h1>
+            <p>Our Digital Services</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Digital Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Website Design And Development</h3>
+                <p>Our fantastic website composition arrangements are likewise one reason why Asyma Solutions has become very famous in worldwide because of there best services about website designing projects.</p>
+            </div>
+            <div class="service-card">
+                <h3>Web Hosting and Maintenance</h3>
+                <p>Bursting Fast Web Hosting with Virus Protection and Anti-spam. Top-quality facilitating is less expensive than you might suspect. Get the amazing facilitating that simple to coordinate and versatile, dependable, quick and simple to utilize arrangements.</p>
+            </div>
+            <div class="service-card">
+                <h3>E-commerce Web Designing</h3>
+                <p>Most ideal approach to Sell your item on the web. We make online web based business applications for any sort of organizations. with productive buying climate for purchasers and merchants. We inspire your income and deals, and can bring your creative mind into life.</p>
+            </div>
+            <div class="service-card">
+                <h3>Mobile App Development</h3>
+                <p>We are the top android application advancement organization who give perfect android applications in a practical manner for your changed requirements inside the specified time span. Connect to make your business application.</p>
+            </div>
+            <div class="service-card">
+                <h3>Digital Marketing</h3>
+                <p>A large portion of the Companies trust Asyma Solutions to deal with their online presence and fabricate dependable advertising resources.</p>
+            </div>
+            <div class="service-card">
+                <h3>Email Services</h3>
+                <p>Get proficient email facilitating administrations and make letter drops that coordinate your space name. Lift the trust of your image and advance it with each sent email!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <h2>Our Team</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="John Doe">
+                <h3>John Doe</h3>
+                <p>CEO & Lead Developer</p>
+            </div>
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Jane Smith">
+                <h3>Jane Smith</h3>
+                <p>UI/UX Designer</p>
+            </div>
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Mike Johnson">
+                <h3>Mike Johnson</h3>
+                <p>Project Manager</p>
+            </div>
+            <div class="team-card">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Emily Brown">
+                <h3>Emily Brown</h3>
+                <p>Frontend Developer</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
