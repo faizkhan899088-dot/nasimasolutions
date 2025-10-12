@@ -90,6 +90,7 @@
             font-size: 24px;
             cursor: pointer;
             color: #f4a261;
+            padding: 5px;
         }
         #nav-toggle {
             display: none;
@@ -383,7 +384,9 @@
                 flex-direction: column;
                 align-items: flex-start;
                 background: rgba(0, 109, 119, 0.95);
-                padding: 10px;
+                padding: 10px 0;
+                margin-top: 10px;
+                border-radius: 5px;
             }
             .nav-links.active {
                 display: flex;
@@ -395,7 +398,13 @@
                 right: 15px;
             }
             nav a {
-                margin: 8px 0;
+                margin: 10px 15px;
+                width: 100%;
+                text-align: left;
+            }
+            .button {
+                width: 100%;
+                margin: 10px 0;
             }
             .hero {
                 padding: 20px 10px;
@@ -478,9 +487,9 @@
 <body>
     <nav>
         <h2>Nasima Solutions</h2>
-        <input type="checkbox" id="nav-toggle">
-        <label for="nav-toggle" class="hamburger">☰</label>
-        <div class="nav-links">
+        <input type="checkbox" id="nav-toggle" aria-controls="nav-links" aria-expanded="false">
+        <label for="nav-toggle" class="hamburger" aria-label="Toggle menu">☰</label>
+        <div class="nav-links" id="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About Us</a>
             <a href="#services">Services</a>
@@ -638,16 +647,33 @@
 
     <script>
         document.querySelector('.hamburger').addEventListener('click', () => {
+            const navToggle = document.querySelector('#nav-toggle');
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
         });
 
         // Close mobile menu when a link is clicked
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        document.querySelectorAll('.nav-links a, .nav-links .button').forEach(link => {
             link.addEventListener('click', () => {
-                document.querySelector('.nav-links').classList.remove('active');
-                document.querySelector('#nav-toggle').checked = false;
+                const navLinks = document.querySelector('.nav-links');
+                const navToggle = document.querySelector('#nav-toggle');
+                navLinks.classList.remove('active');
+                navToggle.checked = false;
+                navToggle.setAttribute('aria-expanded', 'false');
             });
+        });
+
+        // Ensure menu closes when clicking outside on mobile
+        document.addEventListener('click', (event) => {
+            const navToggle = document.querySelector('#nav-toggle');
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            if (navToggle.checked && !navLinks.contains(event.target) && event.target !== hamburger) {
+                navLinks.classList.remove('active');
+                navToggle.checked = false;
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
         });
     </script>
 </body>
