@@ -173,6 +173,10 @@
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center; /* Center the form horizontally */
+            align-items: center; /* Center the form vertically */
+            min-height: 400px; /* Ensure enough height for vertical centering */
         }
 
         .contact-form h3 {
@@ -184,6 +188,8 @@
         .contact-form form {
             display: grid;
             gap: 1rem;
+            width: 100%; /* Ensure form takes full width of container */
+            max-width: 500px; /* Limit form width for better centering */
         }
 
         .contact-form input,
@@ -280,6 +286,15 @@
 
             .contact-info {
                 grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                min-height: 0; /* Remove min-height on mobile for natural flow */
+                padding: 1.5rem;
+            }
+
+            .contact-form form {
+                max-width: 100%; /* Full width on mobile */
             }
 
             .contact-form input,
