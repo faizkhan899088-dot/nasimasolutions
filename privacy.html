@@ -72,6 +72,24 @@
             background-color: #e64a19;
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .hamburger.active {
+            transform: rotate(90deg);
+        }
+
+        #nav-toggle {
+            display: none;
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1506784898025-7e736cd1a588');
@@ -186,11 +204,40 @@
             }
 
             .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                background: #006064;
+                padding: 1rem 0;
                 margin-top: 1rem;
+                border-radius: 5px;
+                transition: max-height 0.3s ease;
+                max-height: 0;
+                overflow: hidden;
+            }
+
+            .nav-links.active {
+                display: flex;
+                max-height: 300px; /* Adjust based on content */
             }
 
             .nav-links a {
-                margin: 0 0.8rem;
+                margin: 0.8rem 0;
+                font-size: 1.1rem;
+            }
+
+            .get-in-touch {
+                width: 100%;
+                margin: 0.8rem 0;
+                padding: 0.8rem;
+            }
+
+            .hamburger {
+                display: block;
+                position: absolute;
+                top: 1.2rem;
+                right: 5%;
             }
 
             .hero h1 {
@@ -217,6 +264,8 @@
     <!-- Header/Navigation -->
     <header>
         <h2 class="logo">Asyma Solutions</h2>
+        <input type="checkbox" id="nav-toggle" aria-controls="nav-links" aria-expanded="false">
+        <label for="nav-toggle" class="hamburger" aria-label="Toggle menu">☰</label>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html">about Us</a>
@@ -271,14 +320,14 @@
             <li>at the point when important to convey the item you require, for example, with an installment card supplier who we use to handle your Visa exchange;</li>
             <li>when approved by law or important to consent to a substantial legitimate interaction;</li>
             <li>when needed to ensure and guard the rights or property of Company, including the security of our items.</li>
-            <li>at the point when important to ensure the individual security, property or different privileges of people in general, Company or its clients or workers or regarding an offer of all or part of our business.</li>
+            <li>at the point when important to ensure the individual security, property or different privileges of people in general, Company or its clients or workers or concerning an offer of all or part of our business.</li>
         </ul>
         <p>In case we are legitimately constrained to uncover your own information to an outsider, we will utilize monetarily sensible endeavors to advise you ahead of an exposure except if legitimately denied. In case we are engaged with a consolidation, obtaining or resource deal, we will submit to this Privacy Policy, and any influenced clients will be educated on the off chance that we move any close to home information to an outsider or on the other hand if individual information becomes subject to an alternate protection strategy accordingly.</p>
 
         <h3>Your rights over your data</h3>
         <p>You reserve the option to get some information about the individual information we measure about you, the reason and nature of the handling, and to give data on who we share it with.</p>
         <p>You reserve the privilege to demand that we update, right, or erase your own information whenever. Except if you demand us to erase your information, kindly note that we might save your own information for one year after you quit being a client (however we commonly keep your own information no longer than is sensibly needed given the reasons for which the information was gathered).</p>
-        <p>You reserve the option to anticipate that we should ensure your own information and guard it. We make a solid effort to ensure our security items and our clients from unapproved admittance to or unapproved alteration, exposure or obliteration of the data we hold. Specifically:</p>
+        <p>You reserve the option to anticipate that we should ensure your own information and guard it. We make a solid effort to ensure our security items and our clients from unapproved admittance to or unapproved adjustment, exposure or obliteration of the data we hold. Specifically:</p>
         <ul>
             <li>We maintain this Privacy Policy consistently regarding all information that we gather from you</li>
             <li>We limit the utilization and revelation of your own information, and work to guarantee that anybody with whom we offer such data treats that data with the protection and security it deserves; and</li>
@@ -292,9 +341,9 @@
         <p>asymasolutions doesn't reveal Personal Data, except if exposure is important to conform to an enforceable government solicitation like a warrant.</p>
 
         <h3>CHANGE OF OWNERSHIP</h3>
-        <p>In case of an adjustment of proprietorship, or an immediate consolidation or obtaining with another substance, we maintain whatever authority is needed to move all of asymasolutions.com User data, including Personal Data, to a different element. We will utilize monetarily sensible endeavors to tell you (by posting on our site or an email to the email address you give when you register) of any adjustment in proprietorship, consolidation or obtaining of asymasolutions.com resources by an outsider, and you might decide to alter any of your enrollment data around then.</p>
+        <p>In case of an adjustment in proprietorship, or an immediate consolidation or obtaining with another substance, we maintain whatever authority is needed to move all of asymasolutions.com User data, including Personal Data, to a different element. We will utilize monetarily sensible endeavors to tell you (by posting on our site or an email to the email address you give when you register) of any adjustment in proprietorship, consolidation or obtaining of asymasolutions.com resources by an outsider, and you might decide to alter any of your enrollment data around then.</p>
         <p>asymasolutions.com utilizes industry standard safety efforts to ensure against the misfortune, misuse and change of the data under our influence. In spite of the fact that we put forth great confidence attempts to store the data gathered by asymasolutions.com in a secure working climate that isn't accessible to the general population, asymasolutions.com can't ensure total security. Further, while we find sensible ways to guarantee the uprightness and security of our organization and frameworks, we can't ensure that our safety efforts will forestall outsider "wafers" from acquiring this data.</p>
-        <p>You may, whenever, decide to address or refresh the data you have submitted to asymasolutions.com by updating your account on our site.</p>
+        <p>You may, whenever, decide to address or update the data you have submitted to asymasolutions.com by updating your account on our site.</p>
         <p>In the event that you drop your record, your Personal Data and other data might be held in our document or reinforcement records.</p>
 
         <h3>Contacting US</h3>
@@ -327,5 +376,41 @@
             </div>
         </div>
     </section>
-</body>
-</html>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            const navToggle = document.querySelector('#nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            navToggle.checked = !navToggle.checked;
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+        });
+
+        // Close mobile menu when a link or button is clicked
+        document.querySelectorAll('.nav-links a, .nav-links .get-in-touch').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.querySelector('.nav-links');
+                const navToggle = document.querySelector('#nav-toggle');
+                const hamburger = document.querySelector('.hamburger');
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                navToggle.checked = false;
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            const navToggle = document.querySelector('#nav-toggle');
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            if (navToggle.checked && !navLinks.contains(event.target) && event.target !== hamburger) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                navToggle.checked = false;
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
