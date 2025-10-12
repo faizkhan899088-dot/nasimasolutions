@@ -72,6 +72,24 @@
             background-color: #e64a19;
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .hamburger.active {
+            transform: rotate(90deg);
+        }
+
+        #nav-toggle {
+            display: none;
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1522071901874-81a78aa35063');
@@ -198,11 +216,40 @@
             }
 
             .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                background: #006064;
+                padding: 1rem 0;
                 margin-top: 1rem;
+                border-radius: 5px;
+                transition: max-height 0.3s ease;
+                max-height: 0;
+                overflow: hidden;
+            }
+
+            .nav-links.active {
+                display: flex;
+                max-height: 300px; /* Adjust based on content */
             }
 
             .nav-links a {
-                margin: 0 0.8rem;
+                margin: 0.8rem 0;
+                font-size: 1.1rem;
+            }
+
+            .get-in-touch {
+                width: 100%;
+                margin: 0.8rem 0;
+                padding: 0.8rem;
+            }
+
+            .hamburger {
+                display: block;
+                position: absolute;
+                top: 1.2rem;
+                right: 5%;
             }
 
             .hero h1 {
@@ -230,9 +277,11 @@
     <!-- Header/Navigation -->
     <header>
         <h2 class="logo">Nasima Solutions</h2>
+        <input type="checkbox" id="nav-toggle" aria-controls="nav-links" aria-expanded="false">
+        <label for="nav-toggle" class="hamburger" aria-label="Toggle menu">☰</label>
         <div class="nav-links">
             <a href="index.html">Home</a>            
-          <a href="about.html">about Us</a>
+            <a href="about.html">about Us</a>
             <a href="services.html">services Us</a>
             <a href="privacy-policy.html">Privacy Policy</a>
             <a href="contact-us.html">Contact Us</a>
@@ -290,5 +339,41 @@
             </div>
         </div>
     </section>
-</body>
-</html>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            const navToggle = document.querySelector('#nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            navToggle.checked = !navToggle.checked;
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+        });
+
+        // Close mobile menu when a link or button is clicked
+        document.querySelectorAll('.nav-links a, .nav-links .get-in-touch').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.querySelector('.nav-links');
+                const navToggle = document.querySelector('#nav-toggle');
+                const hamburger = document.querySelector('.hamburger');
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                navToggle.checked = false;
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            const navToggle = document.querySelector('#nav-toggle');
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            if (navToggle.checked && !navLinks.contains(event.target) && event.target !== hamburger) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                navToggle.checked = false;
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
